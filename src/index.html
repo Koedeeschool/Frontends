@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Azure AD B2C Login</title>
+  <title>Azure B2C Login</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <script src="https://alcdn.msauth.net/browser/2.31.0/js/msal-browser.min.js"></script>
   <style>
     *,
     *:before,
@@ -64,8 +63,10 @@
       line-height: 42px;
       text-align: center;
     }
-    button {
+    a.button-link {
+      display: block;
       margin-top: 60px;
+      text-align: center;
       width: 100%;
       background-color: #ffffff;
       color: #080710;
@@ -73,7 +74,11 @@
       font-size: 18px;
       font-weight: 600;
       border-radius: 5px;
-      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    a.button-link:hover {
+      background-color: #ddd;
     }
     .note {
       margin-top: 25px;
@@ -90,34 +95,13 @@
   </div>
   <form>
     <h3>Login with Azure B2C</h3>
-    <button type="button" onclick="signInB2C()">Sign up / Sign in</button>
-    <div class="note">Powered by Azure AD B2C</div>
+    <a
+      class="button-link"
+      href="https://videohost.b2clogin.com/videohost.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_signupsignin&client_id=a711ccd2-03c6-47a8-838e-062a56793be9&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fthankful-cliff-014d94a1e.6.azurestaticapps.net&scope=openid&response_type=code&prompt=login"
+    >
+      Sign In / Sign Up
+    </a>
+    <div class="note">Secure authentication via Azure AD B2C</div>
   </form>
-
-  <script>
-    const msalConfig = {
-      auth: {
-        clientId: "a711ccd2-03c6-47a8-838e-062a56793be9",
-        authority: "https://videohost.b2clogin.com/videohost.onmicrosoft.com/B2C_1_signupsignin
-        knownAuthorities: ["videohost.b2clogin.com"],
-        redirectUri: "http://localhost:3000"
-      }
-    };
-
-    const msalInstance = new msal.PublicClientApplication(msalConfig);
-
-    async function signInB2C() {
-      try {
-        const loginResponse = await msalInstance.loginPopup({
-          scopes: ["openid", "profile", "offline_access"]
-        });
-        console.log("Login successful:", loginResponse.account);
-        alert("Welcome, " + loginResponse.account.username);
-      } catch (error) {
-        console.error(error);
-        alert("B2C Login failed. Check console.");
-      }
-    }
-  </script>
 </body>
 </html>
