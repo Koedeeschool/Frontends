@@ -1,21 +1,69 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-html, body {
+🎨 style.css
+css
+Copy
+Edit
+body {
   margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
+  font-family: 'Arial', sans-serif;
+  background: #141414;
+  color: #fff;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #333;
 }
 
-main > h1 {
+.site-header h1 {
+  font-size: 1.8rem;
+  color: #e50914;
+  margin: 0;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background: #e50914;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+.hero {
+  padding: 2rem;
+  background: #222;
   text-align: center;
-  font-size: 3.5em;
+  border-bottom: 1px solid #333;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.video-card {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
