@@ -1,107 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Azure B2C Login</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  <style>
-    *,
-    *:before,
-    *:after {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background-color: #080710;
-      font-family: 'Poppins', sans-serif;
-    }
-    .background {
-      width: 430px;
-      height: 520px;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      left: 50%;
-      top: 50%;
-    }
-    .background .shape {
-      height: 200px;
-      width: 200px;
-      position: absolute;
-      border-radius: 50%;
-    }
-    .shape:first-child {
-      background: linear-gradient(#1845ad, #23a2f6);
-      left: -80px;
-      top: -80px;
-    }
-    .shape:last-child {
-      background: linear-gradient(to right, #ff512f, #f09819);
-      right: -30px;
-      bottom: -80px;
-    }
-    form {
-      height: 520px;
-      width: 400px;
-      background-color: rgba(255, 255, 255, 0.13);
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-      padding: 50px 35px;
-      color: white;
-    }
-    form h3 {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 42px;
-      text-align: center;
-    }
-    a.button-link {
-      display: block;
-      margin-top: 60px;
-      text-align: center;
-      width: 100%;
-      background-color: #ffffff;
-      color: #080710;
-      padding: 15px 0;
-      font-size: 18px;
-      font-weight: 600;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    a.button-link:hover {
-      background-color: #ddd;
-    }
-    .note {
-      margin-top: 25px;
-      text-align: center;
-      font-size: 14px;
-      color: #e0e0e0;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreamFlix</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-  </div>
-  <form>
-    <h3>Login with Azure B2C</h3>
-    <a
-      class="button-link"
-      href="https://videohost.b2clogin.com/videohost.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_signupsignin&client_id=a711ccd2-03c6-47a8-838e-062a56793be9&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fthankful-cliff-014d94a1e.6.azurestaticapps.net&scope=openid&response_type=code&prompt=login"
-    >
-      Sign In / Sign Up
-    </a>
-    <div class="note">Secure authentication via Azure AD B2C</div>
-  </form>
+  <header class="site-header">
+    <h1>StreamFlix</h1>
+    <a class="logout" href="/.auth/logout?post_logout_redirect_uri=/login">Logout</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Featured Collection</h2>
+      <p>Binge-worthy videos just for you.</p>
+    </section>
+
+    <section id="video-grid" class="grid-container">
+      <!-- Videos load here -->
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
