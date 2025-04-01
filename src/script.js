@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const containerUrl = "https://<yourstorage>.blob.core.windows.net/videos?restype=container&comp=list";
-  const videoBase = "https://<yourstorage>.blob.core.windows.net/videos/";
+  const containerUrl = "https://streamflixvideos.blob.core.windows.net/videos?restype=container&comp=list";
+  const videoBase = "https://streamflixvideos.blob.core.windows.net/videos";
 
   try {
     const response = await fetch(containerUrl);
