@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>AzureFlix Player</title>
+    <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+    <div class="video-container">
+        <video id="azurePlayer" controls autoplay>
+        <source src="" type="application/vnd.ms-sstr+xml">
+        </video>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const manifestUrl = urlParams.get('video');
+      
+        const options = {
+          techOrder: ["azureHtml5JS", "html5"],
+          autoplay: true,
+          controls: true,
+          logo: { enabled: false }
+        };
+      
+        const player = amp("azurePlayer", options);
+        player.src([{
+          src: manifestUrl,
+          type: "application/vnd.ms-sstr+xml" // For Smooth Streaming
+        }]);
+      </script>
+    </body>
+</html>
