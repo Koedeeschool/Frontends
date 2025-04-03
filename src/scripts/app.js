@@ -3,7 +3,7 @@ const movies = [/* Your full movie array from previous step */
         title: "Avengers: Endgame", 
         thumbnail: "assets/images/EndGame.JPG",
         // Use Azure Media Services URL for actual streaming
-        streamUrl: "https://streamflixvideos.blob.core.windows.net/videos/AVENGERS-ENDGAME_IMAX.mp4"
+        streamUrl: "https://streamflixvideos.blob.core.windows.net/videos/AVENGERS-ENDGAME_IMAX.mp4?sp=r&st=2025-04-03T02:31:37Z&se=2025-04-03T10:31:37Z&spr=https&sv=2024-11-04&sr=b&sig=FNHVfu5lAUs2UiIC%2BOD42TRgDMSpw7U1P6sKcQEU7FU%3D"
       },
       // Add more movies...
       // scripts/app.js (updated movie data)
